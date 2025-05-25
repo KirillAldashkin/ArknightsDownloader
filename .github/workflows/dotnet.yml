@@ -36,7 +36,7 @@ jobs:
       with:
         name: ${{ matrix.rid }}-${{ matrix.arch }}
         path: |
-          bin/Release/net8.0/${{ matrix.rid }}-${{ matrix.arch }}/publish/
+          bin/Release/net9.0/${{ matrix.rid }}-${{ matrix.arch }}/publish/
           !**/*.pdb
           !**/*.dbg
           !**/*.dsym
