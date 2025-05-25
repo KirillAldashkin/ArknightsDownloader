@@ -1,6 +1,5 @@
 # Preparing
-1. Go to **"Actions"** and download latest version for your OS + CPU, then unpack it
-2. Download [`config.json`](./config.json) and place it next to executable
+Go to **"Actions"** and download latest version for your OS + CPU, then unpack it
 # Using
 Start executable and follow instructions in terminal.
 ## Actions
@@ -9,7 +8,9 @@ Download the most recent version for a chosen server. By default, all versions a
 stored at the same time, but **<u>files from previous versions are reused</u>** using
 symlinks, so disk usage is not a problem.
 
-Can be paused (press Ctrl+C **once** and wait a bit).
+Assets are downloaded to `assets/{server}/{version}/resources`  
+This action can be paused (press Ctrl+C **once** and wait a bit) and resumed
+on the next app launch (if no version was released during this pause).
 > [!NOTE]
 > This is resilient to network failures - it will crash but on the
 > next launch it will continue downloading from where it stopped.

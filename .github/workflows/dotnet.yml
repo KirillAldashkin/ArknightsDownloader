@@ -40,3 +40,4 @@ jobs:
           !**/*.pdb
           !**/*.dbg
           !**/*.dsym
+          !**/*.dSYM
