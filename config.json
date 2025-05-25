@@ -1,0 +1,38 @@
+﻿{
+  "folder": "data",
+  "platform": "Android",
+  "threads": 3,
+  "lpackPreference": 65536,
+  "servers": [
+    {
+      "key": "en",
+      "name": "Global",
+      "url": "https://ak-conf.arknights.global/config/prod/official/network_config"
+    },
+    {
+      "key": "cn",
+      "name": "Chinese",
+      "url": "https://ak-conf.hypergryph.com/config/prod/official/network_config"
+    },
+    {
+      "key": "jp",
+      "name": "Japanese",
+      "url": "https://ak-conf.arknights.jp/config/prod/official/network_config"
+    },
+    {
+      "key": "kr",
+      "name": "Korean",
+      "url": "https://ak-conf.arknights.kr/config/prod/official/network_config"
+    },
+    {
+      "key": "tw",
+      "name": "Taiwan",
+      "url": "https://ak-conf.txwy.tw/config/prod/official/network_config"
+    },
+    {
+      "key": "bili",
+      "name": "BiliBili",
+      "url": "https://ak-conf.hypergryph.com/config/prod/b/network_config"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+name: Publish .NET
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        rid: [win, linux, osx]
+        arch: [x64, arm64]
+        include:
+          - rid: linux
+            arch: x64
+            os: ubuntu-24.04
+          - rid: linux
+            arch: arm64
+            os: ubuntu-24.04-arm
+          - rid: win
+            os: windows-2025
+          - rid: osx
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+    - name: Build
+      run: dotnet publish -r ${{ matrix.rid }}-${{ matrix.arch }}
+    - name: Upload executable (push)
+      if: github.event_name == 'push'
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: ${{ matrix.rid }}-${{ matrix.arch }}
+        path: |
+          bin/Release/net8.0/${{ matrix.rid }}-${{ matrix.arch }}/publish/
+          !**/*.pdb
+          !**/*.dbg
+          !**/*.dsym
